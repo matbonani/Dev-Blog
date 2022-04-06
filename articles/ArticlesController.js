@@ -3,7 +3,8 @@ const router = expres.Router();
 
 router.get('/articles', (req, res) => {
     
-    res.send('Rota de artigo');
+    res.render('admin/articles/new.ejs');
 })
+
 
 module.exports = router;
