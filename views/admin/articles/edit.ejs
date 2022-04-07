@@ -1,0 +1,66 @@
+<%- include ('../../partials/header.ejs' ) %>
+<%- include ('../../partials/navbar.ejs' ) %>
+
+
+
+<div class="container">
+    <br>
+    <div class="card">
+        <div class="card-header">
+            <h2>Edição de Artigo</h2>
+        </div>
+        <div class="card-body">
+            <form method="POST" action="#">
+                <label>Categoria</label>
+                <select name="category" class="form-control">
+                    <% categories.forEach((category) => { %>
+                        <% if(category.id === article.categoryId){  %>
+                            <option value="<%= category.id %>" selected><%= category.title %></option>
+                        <% }else{ %>
+                            <option value="<%= category.id %>"><%= category.title %></option>
+                        <% } %>
+                   <% })%>
+                </select>
+                <br>
+
+                <label>Título</label>
+                <input class="form-control" type="text" name="title" value="<%= article.title %>">
+                <br>
+                <textarea class="form-control" name="body" id="article"><%= article.body %></textarea><br>
+                <input type="hidden" name="id" value="<%= article.id %>">
+                <br>
+                <button class="btn btn-success">Atualizar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="/tinymce/tinymce.min.js"></script>
+<script>
+    tinymce.init({
+        language: 'pt_BR',
+        selector: "#article",
+        plugins: [
+                    'advlist',
+                    'autolink',
+                    'link',
+                    'image',
+                    'lists',
+                    'preview',
+                    'searchreplace',
+                    'wordcount',
+                    'fullscreen',
+                    'insertdatetime',
+                    'media',
+                    'save',
+                    'table',
+                    'emoticons',
+                ]
+            
+    });
+</script>
+
+
+
+
+<%- include ('../../partials/footer.ejs') %>
