@@ -22,11 +22,13 @@ router.get("/admin/articles/new", (req, res) => {
 })
 
 router.post("/articles/save", (req, res) => {
+//     valor 
     var title = req.body.title;
     var body = req.body.body;
     var category = req.body.category;
 
     Article.create({
+//     campo / valor
         title: title,
         slug: slugify(title),
         body: body,
