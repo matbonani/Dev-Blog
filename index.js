@@ -39,13 +39,15 @@ app.get('/', (req, res) =>{
     Article.findAll({
         order: [
             ['id', 'DESC']
-        ]
+        ], 
+        limit: 4  // limite de artigo 
     }).then(articles => {
         Category.findAll().then(categories => {
             res.render("index", {articles: articles, categories: categories});
         });
     });
 })
+
 // Rota artigo detail
 app.get("/:slug", (req, res) => {
     var slug = req.params.slug;
