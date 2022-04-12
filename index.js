@@ -4,6 +4,7 @@ const app = express();
 
 const bodyParse = require('body-parser');
 const connection = require('./database/database');
+const session = require("express-session");
 
 const categoriesController = require("./categories/CategoriesController");
 const articlesController = require("./articles/ArticlesController");
@@ -12,7 +13,12 @@ const usersController = require("./user/UsersController");
 const Article = require("./articles/Article")
 const Category = require("./categories/Category");
 const User = require("./user/User");
+const router = require('./categories/CategoriesController');
 
+// Sessions
+app.use(session({
+    secret: "qualquercoisa", cookie: {maxAge: 3000000}
+}));
 
 //      View engine
 app.set('view engine', 'ejs');
@@ -89,6 +95,7 @@ app.get("/category/:slug", (req, res) => {
         res.redirect("/");
     })
 })
+
 
 
 app.listen(3030, () => {
