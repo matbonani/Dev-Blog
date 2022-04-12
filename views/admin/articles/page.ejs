@@ -3,6 +3,8 @@
 <body>
     <div class="container">
         <br>
+        <!--Note que o result(findAndCount) retorna uma o count(contagem) e rows(lista), nesse caso
+        para ter acesso a lista de artigos, devemos utilizar result.articles.rows-->
         <% result.articles.rows.forEach(article => { %>
             <div class="card">
                 <div class="card-header">
