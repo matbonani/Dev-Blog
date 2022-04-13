@@ -96,7 +96,9 @@ app.get("/category/:slug", (req, res) => {
     })
 })
 
-
+app.get("/dev-blog/descricao", (req, res) => {
+    res.render("about");
+})
 
 app.listen(3030, () => {
     console.log('Servidor rodando...')
