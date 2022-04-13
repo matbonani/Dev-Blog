@@ -1,6 +1,6 @@
 <h1> Dev-Blog <h1>
 
-  <h4> Porjeto focado em aprofundar os estudos em Node.JS, onde foi desenvolvido um Blog com atutenticação de usuários e CRUD completo.</h4>
+  <h4> Projeto focado em aprofundar os estudos em Node.JS, onde foi desenvolvido um Blog com atutenticação de usuários e CRUD completo.</h4>
   
 <h2> Projeto </h2>
 <br>
